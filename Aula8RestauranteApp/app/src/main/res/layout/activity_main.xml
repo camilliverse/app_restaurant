@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RA 12529937"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RA 12529495"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:text="Aula 8 restaurante"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText_Produto"
+        android:layout_width="349dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="180dp"
+        android:ems="10"
+        android:hint="Produto"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_quantidade"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Quantidade"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/editText_Produto"
+        app:layout_constraintTop_toBottomOf="@+id/editText_Produto" />
+
+    <EditText
+        android:id="@+id/editText_Valor"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/editText_Produto"
+        app:layout_constraintTop_toTopOf="@+id/editText_quantidade" />
+
+    <ListView
+        android:id="@+id/listView_mesa"
+        android:layout_width="198dp"
+        android:layout_height="393dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.952" />
+
+    <Button
+        android:id="@+id/button_ADD"
+        android:onClick="adicionarItem"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="320dp"
+        android:insetBottom="0dp"
+        android:text="ADD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/listView_mesa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white" />
+
+    <Button
+        android:id="@+id/button_Atualizar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:onClick="AtualizarJson"
+        android:text="Atualizar"
+        app:layout_constraintEnd_toEndOf="@+id/button_ADD"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/button_ADD"
+        app:layout_constraintTop_toBottomOf="@+id/button_ADD" />
+
+    <Button
+        android:id="@+id/button_Abrir"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:onClick="abrirMesa"
+        android:text="Abrir"
+        app:layout_constraintEnd_toEndOf="@+id/button_Atualizar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_Atualizar"
+        app:layout_constraintTop_toBottomOf="@+id/button_Atualizar" />
+
+    <Button
+        android:id="@+id/button_Limpar"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Fechar"
+        android:onClick="fecharMesa"
+        app:layout_constraintEnd_toEndOf="@+id/button_Abrir"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_Abrir"
+        app:layout_constraintTop_toBottomOf="@+id/button_Abrir" />
+
+    <EditText
+        android:id="@+id/editText_idMesa"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="idMEsa"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editText_Produto"
+        app:layout_constraintStart_toStartOf="@+id/editText_Produto" />
+
+    <EditText
+        android:id="@+id/editText_Cliente"
+        android:layout_width="170dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Responsavel"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/editText_Produto"
+        app:layout_constraintTop_toTopOf="@+id/editText_idMesa" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
